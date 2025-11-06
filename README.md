@@ -1,2 +1,0 @@
-# authentication-service
-for innowise
