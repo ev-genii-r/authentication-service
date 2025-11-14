@@ -19,11 +19,14 @@ import java.util.Collections;
 @Component
 public class JwtRequestFilter extends OncePerRequestFilter {
 
-    @Autowired
-    private JwtUtil jwtTokenUtil;
+    private final JwtUtil jwtTokenUtil;
 
-    @Autowired
-    private UserService userService;
+    private final UserService userService;
+
+    public JwtRequestFilter(JwtUtil jwtUtil, UserService userService) {
+        this.jwtTokenUtil = jwtUtil;
+        this.userService = userService;
+    }
 
     private static final String AUTHORIZATION_HEADER = "Authorization";
     private static final String AUTHORIZATION_HEADER_PREFIX = "Bearer ";

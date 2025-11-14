@@ -3,6 +3,7 @@ package com.innowise.evgenii.service;
 import com.innowise.evgenii.entity.User;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
+import lombok.Value;
 import org.springframework.stereotype.Component;
 
 import javax.crypto.SecretKey;
@@ -12,6 +13,7 @@ import java.util.Date;
 public class JwtUtil {
 
     private final String secret = System.getenv("JWT_SECRET");
+
     private final Long ACCESS_TOKEN_DURATION = 3600000L; //1 hour
     private final Long REFRESH_TOKEN_DURATION = 86400000L; //24 hour
 
